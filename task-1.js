@@ -1,7 +1,7 @@
 "use strict";
 function slugify(title) {
-  const slug = [title] 
-  return slug.join("-");
+  const words = title.split(" ");
+  return words.join("-").toLowerCase();
 }
 console.log(slugify("Arrays for begginers")); // "arrays-for-begginers"
 console.log(slugify("English for developer")); // "english-for-developer"
@@ -151,7 +151,7 @@ console.log(firstArray); // ["Mercury", "Venus"];
 console.log(secondArray); // ["Mars", "Jupiter"];
 console.log(result); // ["Mercury", "Venus", "Mars", "Jupiter"];
 
-//olejność łączenia!!!
+//Kolejność łączenia!!!
 const firstArray = ["Mercury", "Venus"];
 const secondArray = ["Mars", "Jupiter"];
 const thirdArray = ["Saturn", "Neptune"];
@@ -161,6 +161,36 @@ console.log(firstArray.concat(secondArray, thirdArray));
 
 console.log(firstArray.concat(thirdArray, secondArray)); 
 // ['Mercury', 'Venus', 'Saturn', 'Neptune', 'Mars', 'Jupiter', ];
+
+
+const clients = ["Mango", "Ajax", "Poly", "Kiwi", "Poly"];
+console.log(clients.indexOf("Poly")); // 2
+console.log(clients.indexOf("Monkong")); // -1
+
+
+const planets = ["Earth", "Mars", "Venus"];
+
+planets.push("Jupiter");
+console.log(planets); // ['Earth', 'Mars', 'Venus', 'Jupiter']
+
+planets.push("Saturn", "Neptune");
+console.log(planets); // ['Earth', 'Mars', 'Venus', 'Jupiter', "Saturn", "Neptune"]
+
+const tags = [];
+
+for(let i = 0; i < 3; i += 1) {
+	tags.push(`tag-${i}`);
+}
+console.log(tags); // ["tag-0", "tag-1", "tag-2"]
+
+
+//ITERACJE PO TABLICY
+const planets = ["Earth", "Mars", "Venus"];
+
+for (let i = 0; i < planets.length; i += 1) {
+  console.log(planets[i]);
+}
+
 
 
 
